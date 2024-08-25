@@ -4,7 +4,7 @@ import { Bot, Loader2, Send, User2 } from "lucide-react";
 import { useChat } from "ai/react";
 
 export default function Home() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, stop, reset } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, stop } = useChat({
     api: '/api/genai', // Ensure this is the correct API route
   });
 
@@ -20,12 +20,7 @@ export default function Home() {
       <RenderMessages messages={messages} isLoading={isLoading} />
 
       {/* Restart Button */}
-      <button
-        onClick={reset}
-        className="mt-8 px-4 py-2 bg-red-500 text-white rounded-full shadow-md hover:bg-red-600 transition"
-      >
-        Restart
-      </button>
+      
     </main>
   );
 }
